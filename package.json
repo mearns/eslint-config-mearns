@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-mearns",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.2.1-dev",
   "description": "Standard linter config for me.",
   "keywords": [],
   "author": "Brian Mearns <mearns.b@gmail.com>",
