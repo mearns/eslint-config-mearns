@@ -56,6 +56,10 @@ Finally, we add a ["no-warning-comments"](https://eslint.org/docs/rules/no-warni
 flag things that you need to fix before you merge or publish. However, these rules do imply that there shouldn't be any long-lived use of these comments: use
 an issue tracker for that.
 
+## Variations
+
+If you're using jest, you might want to extends "mearns/jest"; this will set appropriate overrides for files under the `test/` directory.
+
 ## Prettier
 
 Note that we stick with prettier version 1. Version 2 introduced a lot of stuff that we don't care for, like trailing commas at the end of array and object literals. It also

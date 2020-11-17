@@ -13,5 +13,13 @@ module.exports = {
         "no-extra-semi": "error",
         "semi-spacing": ["error", { before: false, after: true }],
         "prettier/prettier": "error"
-    }
+    },
+    overrides: [
+        {
+            files: ["dev-scripts/**"],
+            rules: {
+                "no-console": "off"
+            }
+        }
+    ]
 };

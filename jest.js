@@ -6,12 +6,6 @@ module.exports = {
             env: {
                 jest: true
             }
-        },
-        {
-            files: ["dev-scripts/**"],
-            rules: {
-                "no-console": "off"
-            }
         }
     ]
 };
