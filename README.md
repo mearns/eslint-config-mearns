@@ -60,6 +60,8 @@ an issue tracker for that.
 
 If you're using jest, you might want to extends "mearns/jest"; this will set appropriate overrides for files under the `test/` directory.
 
+If you're writing in typescript, you probably want to use "mearns/typescript", which will set appropriate overrides for typescript files (based on ".ts" extension).
+
 ## Prettier
 
 Note that we stick with prettier version 1. Version 2 introduced a lot of stuff that we don't care for, like trailing commas at the end of array and object literals. It also
