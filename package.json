@@ -1,6 +1,5 @@
 {
-  "name": "eslint-config-mearns",
-  "private": true,
+  "name": "@bmearns/eslint-config",
   "version": "0.5.2-dev",
   "description": "Standard linter config for me.",
   "keywords": [],
