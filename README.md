@@ -13,7 +13,7 @@ Set your [.eslintrc.json](https://eslint.org/docs/user-guide/configuring#configu
 
 ```json
 {
-    "extends": ["mearns"]
+    "extends": ["@bmearns/eslint-config"]
 }
 ```
 
@@ -58,9 +58,9 @@ an issue tracker for that.
 
 ## Variations
 
-If you're using jest, you might want to extends "mearns/jest"; this will set appropriate overrides for files under the `test/` directory.
+If you're using jest, you might want to extends "@bmearns/eslint-config/jest"; this will set appropriate overrides for files under the `test/` directory.
 
-If you're writing in typescript, you probably want to use "mearns/typescript", which will set appropriate overrides for typescript files (based on ".ts" extension).
+If you're writing in typescript, you probably want to use "@bmearns/eslint-config/typescript", which will set appropriate overrides for typescript files (based on ".ts" extension). Note that you'll want to have this _after_ the jest variant if you're using both.
 
 ## Prettier
 
