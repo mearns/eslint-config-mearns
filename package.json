@@ -31,8 +31,11 @@
       "pre-commit": "npm run pretty -s"
     }
   },
+  "peerDependencies": {
+    "eslint": "7.x"
+  },
   "devDependencies": {
-    "eslint": "^7.12.1",
+    "eslint": "^7.23.0",
     "husky": "^4.3.0",
     "node": "^13.14.0",
     "prettier": "^1.19.1",
