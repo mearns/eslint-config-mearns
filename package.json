@@ -1,6 +1,6 @@
 {
   "name": "@bmearns/eslint-config",
-  "version": "0.5.4",
+  "version": "0.5.5-dev.0",
   "description": "Standard linter config for me.",
   "keywords": [],
   "author": "Brian Mearns <mearns.b@gmail.com>",
