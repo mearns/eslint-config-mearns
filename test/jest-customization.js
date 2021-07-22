@@ -75,10 +75,16 @@ expect.extend({
                                     this.utils.printReceived(rule)
                                 )
                             );
-                        } else {
+                        } else if (allViolations.length) {
                             report.push(
-                                `Received: no violations of rule ${ruleName}`
+                                "",
+                                "Received:",
+                                ...allViolations.map(rule =>
+                                    this.utils.printReceived(rule)
+                                )
                             );
+                        } else {
+                            report.push(`Received: no violations`);
                         }
                     } else {
                         report.push(

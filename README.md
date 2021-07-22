@@ -61,9 +61,3 @@ an issue tracker for that.
 If you're using jest, you might want to extends "@bmearns/eslint-config/jest"; this will set appropriate overrides for files under the `test/` directory.
 
 If you're writing in typescript, you probably want to use "@bmearns/eslint-config/typescript", which will set appropriate overrides for typescript files (based on ".ts" extension). Note that you'll want to have this _after_ the jest variant if you're using both.
-
-## Prettier
-
-Note that we stick with prettier version 1. Version 2 introduced a lot of stuff that we don't care for, like trailing commas at the end of array and object literals. It also
-seems to clash with the "prettier/recommended" rules so you end up with your auto-formatter changing things and then your linter telling you to change it back in a never ending
-battle.
