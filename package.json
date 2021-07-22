@@ -1,6 +1,6 @@
 {
   "name": "@bmearns/eslint-config",
-  "version": "0.5.5-dev.0",
+  "version": "1.0.0-dev.0",
   "description": "Standard linter config for me.",
   "keywords": [],
   "author": "Brian Mearns <mearns.b@gmail.com>",
@@ -17,13 +17,14 @@
   "files": [
     "index.js",
     "jest.js",
-    "typescript.js"
+    "typescript.js",
+    ".prettierrc.js"
   ],
   "scripts": {
     "pretty": "pretty-quick --staged",
     "pretty-all": "prettier --write ./*.js ./*.json",
     "check": "eslint --config index.js . --format codeframe",
-    "test": "echo \"No tests.\"",
+    "test": "jest",
     "verify": "npm run check && npm run test"
   },
   "husky": {
@@ -35,21 +36,22 @@
     "eslint": "7.x"
   },
   "devDependencies": {
-    "eslint": "^7.23.0",
-    "husky": "^4.3.0",
+    "eslint": "^7.31.0",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
     "node": "^13.14.0",
-    "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.2"
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.20.0",
-    "@typescript-eslint/parser": "^4.20.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-config-standard": "^16.0.1",
-    "eslint-plugin-import": "^2.22.1",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0"
   }
 }

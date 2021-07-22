@@ -2,9 +2,11 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 12
     },
-    extends: ["standard", "plugin:prettier/recommended"],
+    extends: ["eslint:recommended", "standard", "plugin:prettier/recommended"],
     reportUnusedDisableDirectives: true,
     rules: {
+        ...require("./rule-sets/eslint/best-practices"),
+        "no-undef": "error",
         "no-warning-comments": [
             "error",
             { terms: ["fixme", "xxx", "todo"], location: "anywhere" }
