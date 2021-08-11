@@ -20,7 +20,7 @@ Set your [.eslintrc.json](https://eslint.org/docs/user-guide/configuring#configu
 Optionally, but recommended:
 
 ```console
-> npm install --save-dev prettier@1 pretty-quick@2 husky
+> npm install --save-dev prettier pretty-quick husky
 ```
 
 And merge the following into your package.json:

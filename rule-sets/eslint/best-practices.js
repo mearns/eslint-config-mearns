@@ -35,5 +35,5 @@ module.exports = {
     "no-useless-return": "error",
     "prefer-promise-reject-errors": "error",
     radix: "error",
-    yoda: "error"
+    yoda: "error",
 };

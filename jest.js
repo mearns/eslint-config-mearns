@@ -4,8 +4,8 @@ module.exports = {
         {
             files: ["test/**"],
             env: {
-                jest: true
-            }
-        }
-    ]
+                jest: true,
+            },
+        },
+    ],
 };

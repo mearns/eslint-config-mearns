@@ -1,6 +1,6 @@
 module.exports = {
     parserOptions: {
-        ecmaVersion: 12
+        ecmaVersion: 12,
     },
     extends: ["eslint:recommended", "standard", "plugin:prettier/recommended"],
     reportUnusedDisableDirectives: true,
@@ -9,19 +9,19 @@ module.exports = {
         "no-undef": "error",
         "no-warning-comments": [
             "error",
-            { terms: ["fixme", "xxx", "todo"], location: "anywhere" }
+            { terms: ["fixme", "xxx", "todo"], location: "anywhere" },
         ],
         semi: ["error", "always"],
         "no-extra-semi": "error",
         "semi-spacing": ["error", { before: false, after: true }],
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
     },
     overrides: [
         {
             files: ["dev-scripts/**"],
             rules: {
-                "no-console": "off"
-            }
-        }
-    ]
+                "no-console": "off",
+            },
+        },
+    ],
 };

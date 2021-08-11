@@ -10,10 +10,10 @@ module.exports = {
                 "no-unused-vars": "off",
                 "@typescript-eslint/no-use-before-define": [
                     "error",
-                    { functions: false, classes: false }
+                    { functions: false, classes: false },
                 ],
-                "@typescript-eslint/triple-slash-reference": "off"
-            }
-        }
-    ]
+                "@typescript-eslint/triple-slash-reference": "off",
+            },
+        },
+    ],
 };

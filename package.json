@@ -1,6 +1,6 @@
 {
   "name": "@bmearns/eslint-config",
-  "version": "1.0.3",
+  "version": "1.0.4-dev",
   "description": "Standard linter config for me.",
   "keywords": [],
   "author": "Brian Mearns <mearns.b@gmail.com>",
@@ -23,8 +23,8 @@
   ],
   "scripts": {
     "pretty": "pretty-quick --staged",
-    "pretty-all": "prettier --write ./*.js ./*.json",
-    "check": "eslint --config index.js . --format codeframe",
+    "pretty-all": "prettier --write \"**/*.js\" ./*.json",
+    "check": "eslint --config jest.js . --format codeframe",
     "test": "jest",
     "verify": "npm run check && npm run test"
   },
@@ -34,7 +34,8 @@
     }
   },
   "peerDependencies": {
-    "eslint": "7.x"
+    "eslint": "7.x",
+    "prettier": "2.x"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
@@ -52,7 +53,6 @@
     "eslint-plugin-import": "^2.24.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-standard": "^5.0.0"
+    "eslint-plugin-promise": "^5.1.0"
   }
 }
