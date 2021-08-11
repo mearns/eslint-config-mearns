@@ -18,7 +18,8 @@
     "index.js",
     "jest.js",
     "typescript.js",
-    ".prettierrc.js"
+    ".prettierrc.js",
+    "rule-sets/*"
   ],
   "scripts": {
     "pretty": "pretty-quick --staged",
