@@ -1,18 +1,18 @@
 {
   "name": "@bmearns/eslint-config",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Standard linter config for me.",
   "keywords": [],
   "author": "Brian Mearns <mearns.b@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mearns/PROJECT-NAME.git"
+    "url": "git+https://github.com/mearns/eslint-config-mearns.git"
   },
   "bugs": {
-    "url": "https://github.com/mearns/PROJECT-NAME/issues"
+    "url": "https://github.com/mearns/eslint-config-mearns/issues"
   },
-  "homepage": "https://github.com/mearns/PROJECT-NAME#readme",
+  "homepage": "https://github.com/mearns/eslint-config-mearns#readme",
   "main": "index.js",
   "files": [
     "index.js",
@@ -39,20 +39,20 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "husky": "^7.0.1",
-    "jest": "^27.0.6",
+    "husky": "^7.0.2",
+    "jest": "^27.1.0",
     "node": "^16.6.1",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-promise": "^5.1.0"
   }
 }
