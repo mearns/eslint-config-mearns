@@ -15,6 +15,12 @@ module.exports = {
         "no-extra-semi": "error",
         "semi-spacing": ["error", { before: false, after: true }],
         "prettier/prettier": "error",
+        "no-unused-vars": [
+            "error",
+            {
+                varsIgnorePattern: "_|[iI]gnored?",
+            },
+        ],
     },
     overrides: [
         {

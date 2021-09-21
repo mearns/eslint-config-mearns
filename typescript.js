@@ -13,6 +13,12 @@ module.exports = {
                     { functions: false, classes: false },
                 ],
                 "@typescript-eslint/triple-slash-reference": "off",
+                "@typescript-eslint/no-unused-vars": [
+                    "error",
+                    {
+                        varsIgnorePattern: "_|[iI]gnored?",
+                    },
+                ],
             },
         },
     ],
