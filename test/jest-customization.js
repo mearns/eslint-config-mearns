@@ -76,7 +76,7 @@ expect.extend({
                     "Received:" +
                     "\n\n" +
                     matchedRules
-                        .map((rule) => this.utils.printReceived(matchedRules))
+                        .map(() => this.utils.printReceived(matchedRules))
                         .join("\n"),
             };
         } else {
