@@ -41,7 +41,7 @@ And merge the following into your package.json:
 
 ## Overview
 
-Parses ECMA Version 12, rules based on ["JavaScript Standard Style"](https://standardjs.com/) and [Prettier (v1)](https://prettier.io/), but with semicolons.
+Parses ECMA Version 12, rules based on ["JavaScript Standard Style"](https://standardjs.com/) and [Prettier (v3)](https://prettier.io/), but with semicolons.
 
 The rules start with ["standard"](https://github.com/standard/eslint-config-standard) but we put semicolons back in because some people are really adverse to relying
 on [ASI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Automatic_semicolon_insertion). Our rules require the use of

@@ -18,7 +18,10 @@ module.exports = {
         "no-unused-vars": [
             "error",
             {
-                varsIgnorePattern: "_|[iI]gnored?",
+                varsIgnorePattern: "^_|[iI]gnored?",
+                argsIgnorePattern: "^_|[iI]gnored?",
+                caughtErrorsIgnorePattern: "^_|[iI]gnored?",
+                destructuredArrayIgnorePattern: "^_|[iI]gnored?",
             },
         ],
     },

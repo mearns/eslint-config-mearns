@@ -28,7 +28,7 @@ describe("best-practices", () => {
         test("it fails if an undefined variable is references", async () => {
             await expect("const y = x + 1;\n").javascriptToFailRule(
                 "no-undef",
-                "'x' is not defined."
+                "'x' is not defined.",
             );
         });
     });

@@ -21,7 +21,7 @@ describe("prettier", () => {
         test("should fail when a single-line array literal has a trailing comma", async () => {
             await expect("[11, 12, 13,];\n").javascriptToFailRule(
                 "prettier/prettier",
-                "Delete `,`"
+                "Delete `,`",
             );
         });
 
