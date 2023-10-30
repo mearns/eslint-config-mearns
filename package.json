@@ -1,6 +1,6 @@
 {
   "name": "@bmearns/eslint-config",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Standard linter config for me.",
   "keywords": [],
   "author": "Brian Mearns <mearns.b@gmail.com>",
@@ -20,6 +20,7 @@
   "files": [
     "index.js",
     "jest.js",
+    "jest-adjacent.js",
     "typescript.js",
     ".prettierrc.js",
     "rule-sets/*"
