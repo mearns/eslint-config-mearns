@@ -5,7 +5,8 @@ My [eslint](https://eslint.org/docs/user-guide/configuring) styling rules for No
 ## Use
 
 ```console
-> npm install --save-dev git+https://github.com/mearns/eslint-config-mearns.git
+# > npm install --save-dev git+https://github.com/mearns/eslint-config-mearns.git
+> npm install --save-dev @bmearns/eslint-config
 > npm install --save-dev eslint@8
 ```
 
