@@ -6,7 +6,7 @@ My [eslint](https://eslint.org/docs/user-guide/configuring) styling rules for No
 
 ```console
 > npm install --save-dev git+https://github.com/mearns/eslint-config-mearns.git
-> npm install --save-dev eslint@7
+> npm install --save-dev eslint@8
 ```
 
 Set your [.eslintrc.json](https://eslint.org/docs/user-guide/configuring#configuration-file-formats) as follows:
@@ -28,7 +28,7 @@ And merge the following into your package.json:
 ```json
 {
     "scripts": {
-        "check:eslint": "eslint --max-warnings 0 --format codeframe .",
+        "lint": "mearns-lint .",
         "pretty": "pretty-quick --staged"
     },
     "husky": {
@@ -59,5 +59,8 @@ an issue tracker for that.
 ## Variations
 
 If you're using jest, you might want to extends "@bmearns/eslint-config/jest"; this will set appropriate overrides for files under the `test/` directory.
+Or if you're using jest with your test files adjacent to the source files they test, use "@bmearns/eslint-config/jest-adjacent" instead. This assumes your
+files are named like "_foobar_.test._ext_".
 
-If you're writing in typescript, you probably want to use "@bmearns/eslint-config/typescript", which will set appropriate overrides for typescript files (based on ".ts" extension). Note that you'll want to have this _after_ the jest variant if you're using both.
+If you're writing in typescript, you probably want to use "@bmearns/eslint-config/typescript", which will set appropriate overrides for typescript files
+(based on ".ts" extension). Note that you'll want to have this _after_ the jest variant if you're using both.
