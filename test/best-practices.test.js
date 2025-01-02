@@ -1,4 +1,4 @@
-require("./jest-customization");
+import "./jest-customization";
 
 // a unit test to ensure the consistent-return rule is enabled
 // and that it requires a return statement

@@ -2,6 +2,12 @@
 
 My [eslint](https://eslint.org/docs/user-guide/configuring) styling rules for NodeJS projects.
 
+As of version 4.0.0 of this module, it's been updated as follows:
+
+-   Uses ESLint 9
+-   Uses ESLint flat config style
+-   Assumes all .js files are written in JS Modules (using `import` and `export`).
+
 ## Use
 
 ```console
@@ -10,12 +16,12 @@ My [eslint](https://eslint.org/docs/user-guide/configuring) styling rules for No
 > npm install --save-dev eslint@8
 ```
 
-Set your [.eslintrc.json](https://eslint.org/docs/user-guide/configuring#configuration-file-formats) as follows:
+Set your [eslint.config.js](https://eslint.org/docs/latest/use/configure/configuration-files) as follows:
 
-```json
-{
-    "extends": ["@bmearns/eslint-config"]
-}
+```js
+import bmearns from "@bmearns/eslint-config";
+
+export default [...bmearns.configs.recommended];
 ```
 
 Optionally, but recommended:

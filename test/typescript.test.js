@@ -1,4 +1,4 @@
-require("./jest-customization");
+import "./jest-customization";
 
 test("it does not generally allow unused parameters", async () => {
     await expect(`function foo(unusedParameter: string) {
@@ -41,7 +41,7 @@ test("it allows unused parameters if they start with an underscore", async () =>
 }
 
 foo();
-`).typescriptShouldPassLinting()
+`).typescriptShouldPassLinting();
 });
 
 test("it allows unused variables if they start with an underscore", async () => {
@@ -51,5 +51,5 @@ test("it allows unused variables if they start with an underscore", async () => 
 }
 
 foo();
-`).typescriptShouldPassLinting()
+`).typescriptShouldPassLinting();
 });

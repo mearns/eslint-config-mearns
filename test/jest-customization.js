@@ -1,9 +1,13 @@
-const { ESLint } = require("eslint");
-const path = require("path");
+import { ESLint } from "eslint";
+import path from "path";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const eslint = new ESLint({
     cwd: path.resolve(__dirname, ".."),
-    overrideConfigFile: path.resolve(__dirname, "../index.js"),
+    overrideConfigFile: path.resolve(__dirname, "../base.js"),
 });
 
 const tsEslint = new ESLint({
@@ -12,18 +16,21 @@ const tsEslint = new ESLint({
 });
 
 function makeSnippet(received, rules = []) {
-    const lines = received.split(/\n/)
-        .map((line, idx) => {
-            const lineNum = idx + 1;
-            const rulesViolated = rules.map((r, idx) => ([idx, r])).filter(([_idx, r]) => r.line === lineNum);
-            const prefix = rulesViolated.length
-                ? `[${rulesViolated.map(([idx, r]) => `r${idx}`).join(",")}] ${lineNum}`
-                : String(lineNum)
-            return { prefix, line };
-        })
-    const prefixWidth = Math.max(...lines.map(l => l.prefix.length));
+    const lines = received.split(/\n/).map((line, idx) => {
+        const lineNum = idx + 1;
+        const rulesViolated = rules
+            .map((r, idx) => [idx, r])
+            .filter(([_idx, r]) => r.line === lineNum);
+        const prefix = rulesViolated.length
+            ? `[${rulesViolated
+                  .map(([idx, _r]) => `r${idx}`)
+                  .join(",")}] ${lineNum}`
+            : String(lineNum);
+        return { prefix, line };
+    });
+    const prefixWidth = Math.max(...lines.map((l) => l.prefix.length));
     return lines
-        .map(({prefix, line}) => {
+        .map(({ prefix, line }) => {
             return `${prefix.padStart(prefixWidth, " ")} |${line}`;
         })
         .join("\n");
@@ -32,11 +39,21 @@ function makeSnippet(received, rules = []) {
 expect.extend({
     async javascriptShouldPassLinting(received) {
         const results = await runEslintOnJavascript(received);
-        return evaluateExpectedPassesLinting(this, received, "javascript", results);
+        return evaluateExpectedPassesLinting(
+            this,
+            received,
+            "javascript",
+            results,
+        );
     },
     async typescriptShouldPassLinting(received) {
         const results = await runEslintOnTypescript(received);
-        return evaluateExpectedPassesLinting(this, received, "typescript", results);
+        return evaluateExpectedPassesLinting(
+            this,
+            received,
+            "typescript",
+            results,
+        );
     },
 
     async javascriptToFailRule(
@@ -113,8 +130,13 @@ async function evaluateExpectedPassesLinting(
                 "Received:" +
                 "\n\n" +
                 allViolations
-                    .map((rule, idx) => `  ${self.utils.printReceived(idx)}) ${self.utils.printReceived(rule)}`)
-                    .join("\n")
+                    .map(
+                        (rule, idx) =>
+                            `  ${self.utils.printReceived(
+                                idx,
+                            )}) ${self.utils.printReceived(rule)}`,
+                    )
+                    .join("\n"),
         };
     }
 }
@@ -163,7 +185,12 @@ async function evaluateExpectedFailures(
                 "Received:" +
                 "\n\n" +
                 matchingViolations
-                    .map((rule, idx) => `  ${self.utils.printReceived(idx)}) ${self.utils.printReceived(rule)}`)
+                    .map(
+                        (rule, idx) =>
+                            `  ${self.utils.printReceived(
+                                idx,
+                            )}) ${self.utils.printReceived(rule)}`,
+                    )
                     .join("\n"),
         };
     } else {
@@ -181,7 +208,12 @@ async function evaluateExpectedFailures(
                         ? `Expected ${codeType} snippet to fail rule ${ruleName} with specified conditions, but it did not.`
                         : `Expected ${codeType} snippet to fail rule ${ruleName}, but there were no violations for this rule.`,
                 );
-                report.push("", "", "Snippet:", makeSnippet(received, notableRules));
+                report.push(
+                    "",
+                    "",
+                    "Snippet:",
+                    makeSnippet(received, notableRules),
+                );
                 if (message) {
                     report.push(
                         "",
@@ -191,7 +223,7 @@ async function evaluateExpectedFailures(
                     );
                 }
                 if (Object.entries(otherExpectations).length) {
-                    report.port(
+                    report.push(
                         "",
                         "Other expectations:",
                         ...Object.entries(otherExpectations).map(
@@ -209,7 +241,9 @@ async function evaluateExpectedFailures(
                         "Received:",
                         ...notableRules.map(
                             (rule, idx) =>
-                                `  ${self.utils.printReceived(idx)}) ${self.utils.printReceived(rule)}`,
+                                `  ${self.utils.printReceived(
+                                    idx,
+                                )}) ${self.utils.printReceived(rule)}`,
                         ),
                     );
                 } else {

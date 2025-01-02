@@ -1,15 +1,15 @@
-/**
- * Used when you keep your Jest test files adjacent to the files they test,
- * rather than in a separate directory.
- */
-module.exports = {
-    extends: ".",
-    overrides: [
-        {
-            files: ["**/*.test.*", "**/*.test.*"],
-            env: {
-                jest: true,
-            },
+import base from "./base.js";
+import jest from "eslint-plugin-jest";
+
+export default [
+    ...base,
+    {
+        files: ["**/*.test.*", "**/*.test.*"],
+        plugins: {
+            jest,
         },
-    ],
-};
+        languageOptions: {
+            globals: jest.environments.globals.globals,
+        },
+    },
+];

@@ -1,4 +1,4 @@
-require("./jest-customization");
+import "./jest-customization";
 
 test("it does not generally allow unused parameters", async () => {
     await expect(`function foo(unusedParameter) {

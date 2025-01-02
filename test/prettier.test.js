@@ -1,4 +1,4 @@
-require("./jest-customization");
+import "./jest-customization";
 
 describe("prettier", () => {
     describe("indentation", () => {

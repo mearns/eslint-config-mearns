@@ -1,5 +1,5 @@
 // https://eslint.org/docs/rules/#best-practices
-module.exports = {
+export default {
     "consistent-return": "error",
     curly: "error",
     "dot-notation": "error",

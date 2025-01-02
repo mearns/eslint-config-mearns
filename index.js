@@ -1,36 +1,13 @@
-module.exports = {
-    parserOptions: {
-        ecmaVersion: 12,
+import base from "./base.js";
+import typescript from "./typescript.js";
+import jest from "./jest.js";
+import jestAdjacent from "./jest-adjacent.js";
+
+export default {
+    configs: {
+        jest,
+        jestAdjacent,
+        recommended: base,
+        typescript,
     },
-    extends: ["eslint:recommended", "standard", "plugin:prettier/recommended"],
-    reportUnusedDisableDirectives: true,
-    rules: {
-        ...require("./rule-sets/eslint/best-practices"),
-        "no-undef": "error",
-        "no-warning-comments": [
-            "error",
-            { terms: ["fixme", "xxx", "todo"], location: "anywhere" },
-        ],
-        semi: ["error", "always"],
-        "no-extra-semi": "error",
-        "semi-spacing": ["error", { before: false, after: true }],
-        "prettier/prettier": "error",
-        "no-unused-vars": [
-            "error",
-            {
-                varsIgnorePattern: "^_|[iI]gnored?",
-                argsIgnorePattern: "^_|[iI]gnored?",
-                caughtErrorsIgnorePattern: "^_|[iI]gnored?",
-                destructuredArrayIgnorePattern: "^_|[iI]gnored?",
-            },
-        ],
-    },
-    overrides: [
-        {
-            files: ["dev-scripts/**"],
-            rules: {
-                "no-console": "off",
-            },
-        },
-    ],
 };
