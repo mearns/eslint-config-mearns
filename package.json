@@ -1,6 +1,6 @@
 {
   "name": "@bmearns/eslint-config",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "Standard linter config for me.",
   "keywords": [],
   "author": "Brian Mearns <mearns.b@gmail.com>",
@@ -38,7 +38,7 @@
     }
   },
   "peerDependencies": {
-    "eslint": "^8.51.0",
+    "eslint": "^9.17.0",
     "prettier": "3.x"
   },
   "devDependencies": {
