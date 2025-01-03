@@ -1,6 +1,6 @@
 {
   "name": "@bmearns/eslint-config",
-  "version": "4.0.0",
+  "version": "4.2.0",
   "description": "Standard linter config for me.",
   "keywords": [],
   "type": "module",
@@ -19,12 +19,13 @@
   "homepage": "https://github.com/mearns/eslint-config-mearns#readme",
   "main": "index.js",
   "files": [
+    "base.js",
     "index.js",
     "jest.js",
     "jest-adjacent.js",
     "typescript.js",
-    ".prettierrc.js",
-    "rule-sets/*"
+    "rule-sets/*",
+    "third-party-configs/*"
   ],
   "scripts": {
     "pretty": "pretty-quick --staged",
